@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Modern & Animated</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>BMI Calculator</h1>
+            <p class="subtitle">Calculate your Body Mass Index with modern animations and intuitive design</p>
+        </header>
+        
+        <div class="calculator-card">
+            <div class="card-header">
+                <h2><i class="fas fa-calculator"></i> Enter Your Details</h2>
+            </div>
+            
+            <div class="card-content">
+                <div class="measurement-system">
+                    <div class="system-indicator" id="system-indicator"></div>
+                    <button class="system-btn active" id="metric-btn">
+                        <i class="fas fa-ruler-vertical"></i> Metric System
+                    </button>
+                    <button class="system-btn" id="imperial-btn">
+                        <i class="fas fa-ruler-combined"></i> Imperial System
+                    </button>
+                </div>
+                
+                <div id="metric-inputs">
+                    <div class="input-group">
+                        <label for="height-cm"><i class="fas fa-arrows-alt-v"></i> Height (cm)</label>
+                        <div class="input-container">
+                            <input type="number" id="height-cm" placeholder="Enter your height" min="50" max="300" step="0.1">
+                            <span class="unit">cm</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="weight-kg"><i class="fas fa-weight"></i> Weight (kg)</label>
+                        <div class="input-container">
+                            <input type="number" id="weight-kg" placeholder="Enter your weight" min="10" max="300" step="0.1">
+                            <span class="unit">kg</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="imperial-inputs" style="display: none;">
+                    <div class="input-group">
+                        <label for="height-ft"><i class="fas fa-arrows-alt-v"></i> Height (feet & inches)</label>
+                        <div class="imperial-height-inputs">
+                            <div class="input-container">
+                                <input type="number" id="height-ft" placeholder="Feet" min="3" max="8">
+                                <span class="unit">ft</span>
+                            </div>
+                            <div class="input-container">
+                                <input type="number" id="height-in" placeholder="Inches" min="0" max="11">
+                                <span class="unit">in</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="weight-lbs"><i class="fas fa-weight"></i> Weight (pounds)</label>
+                        <div class="input-container">
+                            <input type="number" id="weight-lbs" placeholder="Enter your weight" min="50" max="660">
+                            <span class="unit">lbs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button class="calculate-btn" id="calculate-btn">
+                        <i class="fas fa-calculator"></i> Calculate BMI
+                    </button>
+                    <button class="reset-btn" id="reset-btn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+                
+                <div class="result-container" id="result-container">
+                    <h2><i class="fas fa-chart-line"></i> Your BMI Result</h2>
+                    <div class="bmi-value" id="bmi-value">--</div>
+                    <div class="bmi-category" id="bmi-category">--</div>
+                    <p class="bmi-message" id="bmi-message">Your BMI suggests you are in the <strong id="category-text">--</strong> category.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bmi-info">
+            <h3><i class="fas fa-info-circle"></i> BMI Categories</h3>
+            <div class="bmi-scale">
+                <div class="scale-item">Underweight<br><span class="scale-value">&lt; 18.5</span></div>
+                <div class="scale-item">Normal<br><span class="scale-value">18.5 - 24.9</span></div>
+                <div class="scale-item">Overweight<br><span class="scale-value">25 - 29.9</span></div>
+                <div class="scale-item">Obese<br><span class="scale-value">≥ 30</span></div>
+            </div>
+            <p>Body Mass Index (BMI) is a simple calculation using a person's height and weight. The formula is BMI = kg/m² where kg is a person's weight in kilograms and m² is their height in metres squared. A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9.</p>
+            <p class="disclaimer"><i class="fas fa-exclamation-circle"></i> Note: BMI is a screening tool and does not diagnose body fatness or health. Consult a healthcare provider for a comprehensive health assessment.</p>
+        </div>
+        
+        <footer>
+            <p>BMI Calculator with Modern Animations • Made with <i class="fas fa-heart heart-icon"></i></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
